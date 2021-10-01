@@ -46,8 +46,10 @@ class _ChatRoomState extends State<ChatRoom> {
       borderRadius: BorderRadius.circular(20.0),
       child: Container(
 
+
         color: Colors.white,
         child: Row(
+
           children: <Widget>[
             SizedBox(width: 8.0),
             Icon(Icons.insert_emoticon,
@@ -112,7 +114,8 @@ class _ChatRoomState extends State<ChatRoom> {
       // backgroundColor: Color.fromRGBO(227, 254, 207, 10),
       appBar: AppBar(
         leadingWidth: 20,
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.blue,
+
         title: SizedBox(
           width: double.infinity,
           child: Stack(
@@ -121,7 +124,7 @@ class _ChatRoomState extends State<ChatRoom> {
               Positioned(
                 child: CircleAvatar(
                   backgroundColor: Colors.white,
-                  foregroundColor: Colors.teal,
+                  foregroundColor: Colors.blue,
                   radius: avatarRadius,
                   child: widget.chatItem.avatar,
                 ),
@@ -151,6 +154,7 @@ class _ChatRoomState extends State<ChatRoom> {
         ],
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
           MessagesStream(user: _auth.currentUser.email),
           inputBar,

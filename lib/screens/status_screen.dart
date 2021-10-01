@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 
@@ -65,10 +66,10 @@ class StatusScreen extends StatelessWidget {
                   ListTile(
                     leading: CircleAvatar(
                       radius: 30,
-                      child: Image.asset("assets/rr.png"),
+                      child: Image.asset("assets/rr.jpg"),
                     ),
                     title: Text(
-                      "Random name",
+                      "Rishu",
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     subtitle: Text("Today, 20:16 PM"),
@@ -82,6 +83,22 @@ class StatusScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+class storyy extends StatelessWidget {
+  //const storyy({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: InkWell(
+        onTap: (){Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>StatusScreen()));},
+
+        child: Container(
+          child: Image.asset("assets/rr.jpg",fit: BoxFit.fitHeight,),
+        ),
       ),
     );
   }

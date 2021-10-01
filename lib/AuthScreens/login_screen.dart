@@ -75,7 +75,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   password = value;
                 },
                 decoration: kTextFieldDecoration.copyWith(
-                    hintText: 'Enter your Password', labelText: 'Password'),
+                    hintText: 'Password Must Be 6 Letters', labelText: 'Password'),
+
               ),
               SizedBox(
                 height: 24.0,

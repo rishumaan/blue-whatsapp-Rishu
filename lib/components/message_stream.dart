@@ -11,11 +11,12 @@ class MessagesStream extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<QuerySnapshot>(
+    return StreamBuilder(
       stream: FirebaseFirestore.instance.collection('messages').snapshots(),
       builder:
-          (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-        if (snapshot.hasError) return Text("Has Error");
+          (BuildContext context,  snapshot) {
+
+        if (snapshot.hasError) return Text("WAIT");
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Center(
             child: CircularProgressIndicator(),
@@ -43,7 +44,7 @@ class MessagesStream extends StatelessWidget {
             ),
           );
         }
-        return Text("No Data");
+        return Text("WAIT FOR YOUR MESSAGE");
       },
     );
   }
